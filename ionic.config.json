@@ -1,0 +1,7 @@
+{
+  "name": "txa22",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
