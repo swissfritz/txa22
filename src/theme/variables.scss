@@ -76,6 +76,15 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
+/** tx special **/
+
+:root {
+  --ion-background-color: #000;
+  --ion-text-color: #fff;
+  --ion-toolbar-background: #000;
+  --ion-toolbar-color: #fff;
+}
+
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors
