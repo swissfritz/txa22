@@ -3,10 +3,50 @@
     <ion-buttons slot="end">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Geöffnet / Anrufen</ion-title>
+    <ion-title>Taxi-Büro anrufen</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-7>Montag + Freitag</ion-col>
+      <ion-col col-5>06:00 - 19:00</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>Dienstag bis Donnerstag</ion-col>
+      <ion-col col-55>08:00 - 17:00</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>Samstag</ion-col>
+      <ion-col col-5>GESCHLOSSEN</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>Sonntag/Feiertag</ion-col>
+      <ion-col col-5>14:00 - 19:00</ion-col>
+    </ion-row>
+  </ion-grid>
 
+  <br><br>
+
+  <ion-item no-lines>
+    <ion-thumbnail item-start>
+      <img src="assets/img/lehner.jpg">
+    </ion-thumbnail>
+    <a href="tel:+4316800820"><h4>&nbsp;&nbsp;Lehner</h4></a>
+  </ion-item>
+
+  <ion-item no-lines>
+    <ion-thumbnail item-start>
+      <img src="assets/img/latin.jpg">
+    </ion-thumbnail>
+    <a href="tel:+4316800831"><h4>&nbsp;&nbsp;Latin</h4></a>
+  </ion-item>
+
+  <ion-item no-lines>
+    <ion-thumbnail item-start>
+      <img src="assets/img/fiala.jpg">
+    </ion-thumbnail>
+    <a href="tel:+4316800890"><h4>&nbsp;&nbsp;Fiala bis 15 h</h4></a>
+  </ion-item>
 </ion-content>

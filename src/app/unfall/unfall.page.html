@@ -7,6 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content class="ion-padding">
+  <img src="assets/img/unfall.png" />
+  <ion-list no-lines>
+    <ion-item><strong>Ruhe bewahren</strong></ion-item>
+    <ion-item><strong>Fotos machen und senden</strong></ion-item>
+    <ion-item><strong>Unfallbericht ausfüllen, <br>nicht unterschreiben!</strong></ion-item>
+    <ion-item><em>Unbedingt!</em>&nbsp;&nbsp;<strong>Wagen in Firma<br>besichtigen lassen</strong></ion-item>
+  </ion-list>
+
+  <ion-button color="light" (click)="goUnfall()">Weiter</ion-button>
 </ion-content>

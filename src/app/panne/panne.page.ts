@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panne',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PannePage implements OnInit {
 
-  constructor() { }
+  message: string;
+  zul: string;
+  stao: string;
+
+  constructor(private emailComposer: EmailComposer,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
+  async sendMailT() {
+
+    this.message = 'Panne Standort: ' + this.stao + '<br>' +
+    'Kennzeichen: ' + this.zul;
+    const email = {
+      to: 'panne@taxiwerbung.at',
+      subject: 'Wagen nicht fahrbar - Pannendreieck im Heckfenster!',
+      body: this.message,
+      isHtml: true
+    };
+    this.emailComposer.open(email);
+  }
 }

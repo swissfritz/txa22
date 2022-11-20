@@ -34,12 +34,12 @@ export class InfoPage implements OnInit {
     this.router.navigateByUrl('/werpr');
   }
 
-  goSchl() {
-    this.router.navigateByUrl('/schul');
+  goFar() {
+  this.router.navigateByUrl('/fahr');
   }
 
-  goFar() {
-    this.router.navigateByUrl('/fahr');
+  goSchl() {
+    this.router.navigateByUrl('/schul');
   }
 
   goWeb() {

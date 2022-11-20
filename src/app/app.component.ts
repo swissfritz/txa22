@@ -23,7 +23,7 @@ export class AppComponent {
     },
     {
       title: 'Geöffnet / Anrufen',
-      url: '/calls',
+      url: '/open',
       icon: ''
     },
     {

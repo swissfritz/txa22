@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fahr',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FahrPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goProz() {
+    this.router.navigateByUrl('/proz');
+  }
+
+  goPau() {
+    this.router.navigateByUrl('/pausch');
+  }
+
+  goPpau() {
+    this.router.navigateByUrl('/ppau');
+  }
+
+  goGeh() {
+    this.router.navigateByUrl('/gehalt');
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/info');
+  }
 }

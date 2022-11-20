@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-austt',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AusttPage implements OnInit {
 
-  constructor() { }
+  constructor(private iab: InAppBrowser) { }
 
   ngOnInit() {
   }
 
+  goWeb() {
+    const tb = this.iab.create('https://taxoil.at/');
+  }
 }

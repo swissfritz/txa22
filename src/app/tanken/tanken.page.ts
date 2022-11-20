@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tanken',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TankenPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  dit() {
+    this.router.navigateByUrl('/tankendi');
+  }
+
+  adtx() {
+    this.router.navigateByUrl('/tankenad');
+  }
+
+  strtx() {
+    this.router.navigateByUrl('/tankenst');
+  }
+
+  faltx() {
+    this.router.navigateByUrl('/tankenf');
+  }
 }

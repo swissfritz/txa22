@@ -1,0 +1,172 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="second"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Übernächste Woche</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-radio-group [(ngModel)]="mo">
+    <ion-row class="tit">Montag</ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-left">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tit">Dienstag</ion-row>
+  </ion-radio-group><ion-radio-group [(ngModel)]="di">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-leftt">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tit">Mittwoch</ion-row>
+  </ion-radio-group><ion-radio-group [(ngModel)]="mi">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-left">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tit">Donnerstag</ion-row>
+  </ion-radio-group><ion-radio-group [(ngModel)]="do">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-left">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tit">Freitag</ion-row>
+  </ion-radio-group><ion-radio-group [(ngModel)]="fr">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-left">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tit">Samstag</ion-row>
+  </ion-radio-group><ion-radio-group [(ngModel)]="sa">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-left">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tit">Sonntag</ion-row>
+  </ion-radio-group><ion-radio-group [(ngModel)]="so">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>früh</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label class="ion-text-left">spät</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-label>24h</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-button color="light" (click)="sendMail()">Absenden</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

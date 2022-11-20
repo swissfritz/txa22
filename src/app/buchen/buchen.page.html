@@ -7,6 +7,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <form [formGroup]="buchenForm">
+    <ion-item>
+      <ion-label class="bg" position="stacked">Name und Vorname</ion-label>
+      <ion-input formControlName="namen" type="text"
+        placeholder="Hier Ihren Namen und Vornamen eingeben"
+        [class.invalid]="!buchenForm.controls['namen'].valid &&
+        buchenForm.controls['namen'].touched">
+      </ion-input>
+    </ion-item>
 
+    <ion-item class="error-message" *ngIf="!buchenForm.controls['namen'].valid &&
+        buchenForm.controls['namen'].touched">
+      <ion-label>Bitte Ihren Namen und Vornamen eingeben</ion-label>
+    </ion-item>
+
+    <ion-list lines="none">
+      <p class="md">Bitte <u><b>wählen</b></u></p>
+      <ion-item lines="none">
+        <ion-label>Gleiches Auto?</ion-label>
+        <ion-toggle class="bggr" slot="start" color="light" formControlName="sameCar" type="toggle" checked="false"></ion-toggle>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Rückruf wegen Auto?</ion-label>
+        <ion-toggle class="bggr" slot="start" color="light" formControlName="callCar" type="toggle" checked="false"></ion-toggle>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Rückruf wegen Kollegen?</ion-label>
+        <ion-toggle class="bggr" slot="start" color="light" formControlName="callColl" type="toggle" checked="false"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <ion-button color="light" (click)="goNext()" expand="block" [disabled]="!buchenForm.valid">
+      Weiter
+    </ion-button>
+  </form>
 </ion-content>
