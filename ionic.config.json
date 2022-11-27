@@ -1,9 +1,6 @@
 {
   "name": "txa22",
   "integrations": {
-    "capacitor": {
-      "enabled": false
-    },
     "cordova": {}
   },
   "type": "angular"
