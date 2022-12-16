@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Übernächste Woche</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="nxtForm">
+    <ion-label position="stacked">Montag</ion-label>
+    <ion-input  formControlName="mo" type="text | undefined"
+    placeholder="f/s/t"></ion-input>
+
+    <ion-label position="stacked">Dienstag</ion-label>
+    <ion-input  formControlName="di" type="text"
+    placeholder="f/s/t"></ion-input>
+
+    <ion-label position="stacked">Mittwoch</ion-label>
+    <ion-input  formControlName="mi" type="text"
+    placeholder="f/s/t"></ion-input>
+
+    <ion-label position="stacked">Donnerstag</ion-label>
+    <ion-input  formControlName="do" type="text"
+    placeholder="f/s/t"></ion-input>
+
+    <ion-label position="stacked">Freitag</ion-label>
+    <ion-input  formControlName="fr" type="text"
+    placeholder="f/s/t"></ion-input>
+
+    <ion-label position="stacked">Samstag</ion-label>
+    <ion-input  formControlName="sa" type="text"
+    placeholder="f/s/t"></ion-input>
+
+    <ion-label position="stacked">Sonntag</ion-label>
+    <ion-input  formControlName="so" type="text"
+    placeholder="f/s/t"></ion-input>
+
+   <ion-button color="light" (click)="sendMail()">Absenden</ion-button>
+  </form>
+</ion-content>

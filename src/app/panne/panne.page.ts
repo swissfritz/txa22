@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class PannePage implements OnInit {
   ngOnInit() {
   }
 
-  async sendMailT() {
+  sendMailT() {
 
     this.message = 'Panne Standort: ' + this.stao + '<br>' +
     'Kennzeichen: ' + this.zul;

@@ -12,8 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,8 +24,8 @@ import { Camera } from '@ionic-native/camera/ngx';
     SplashScreen,
     InAppBrowser,
     WebView,
-    EmailComposer,
     Camera,
+    EmailComposer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

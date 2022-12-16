@@ -55,7 +55,7 @@ export class AppComponent {
       title: 'Anfahrt',
       url: '/anfahrt',
       icon: ''
-    }
+    },
   ];
   constructor(
     private platform: Platform,

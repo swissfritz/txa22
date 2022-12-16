@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Bu1PageRoutingModule } from './bu1-routing.module';
+import { Ft2PageRoutingModule } from './ft2-routing.module';
 
-import { Bu1Page } from './bu1.page';
+import { Ft2Page } from './ft2.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { Bu1Page } from './bu1.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    Bu1PageRoutingModule
+    Ft2PageRoutingModule
   ],
-  declarations: [Bu1Page]
+  declarations: [Ft2Page]
 })
-export class Bu1PageModule {}
+export class Ft2PageModule {}

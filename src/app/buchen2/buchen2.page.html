@@ -3,11 +3,12 @@
     <ion-buttons slot="start">
       <ion-menu-button menu="second"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Nächste Woche</ion-title>
+    <ion-title>Übernächste Woche</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="nxtForm">
   <ion-radio-group [(ngModel)]="mo">
     <ion-row class="tit">Montag</ion-row>
     <ion-row>
@@ -41,7 +42,7 @@
       </ion-col>
       <ion-col>
         <ion-item>
-        <ion-label class="ion-text-leftt">spät</ion-label>
+        <ion-label class="ion-text-left">spät</ion-label>
           <ion-radio value="2"></ion-radio>
         </ion-item>
       </ion-col>
@@ -163,11 +164,7 @@
       </ion-col>
     </ion-row>
   </ion-radio-group>
+  </form>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col><ion-button color="light" (click)="sendMail()">Absenden</ion-button></ion-col>
-      <ion-col><ion-button color="light" (click)="goNext()">Weiter buchen</ion-button></ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-button left color="light" (click)="sendMail()">Absenden</ion-button>
 </ion-content>

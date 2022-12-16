@@ -8,9 +8,10 @@
 </ion-header>
 
 <ion-content padding>
+  <p>Wenn Sie Ihr Fahrzeug für die nächste oder die nächste und die übernächste
+    Woche buchen möchten, können Sie dies hier tun.</p>
   <form [formGroup]="buchenForm">
     <ion-item>
-      <ion-label class="bg" position="stacked">Name und Vorname</ion-label>
       <ion-input formControlName="namen" type="text"
         placeholder="Hier Ihren Namen und Vornamen eingeben"
         [class.invalid]="!buchenForm.controls['namen'].valid &&
@@ -22,26 +23,16 @@
         buchenForm.controls['namen'].touched">
       <ion-label>Bitte Ihren Namen und Vornamen eingeben</ion-label>
     </ion-item>
-
-    <ion-list lines="none">
-      <p class="md">Bitte <u><b>wählen</b></u></p>
       <ion-item lines="none">
-        <ion-label>Gleiches Auto?</ion-label>
+        <ion-label>Gleiches Auto???</ion-label>
         <ion-toggle class="bggr" slot="start" color="light" formControlName="sameCar" type="toggle" checked="false"></ion-toggle>
       </ion-item>
+      <p style="color:gold">Auf cden folgenden Seiten geben Sie bitte unter dem Wochentag <b>f</b> für früh,
+        <b>s</b> für spät oder <b>t</b> für Tag (24h) ein. Wenn Sie "Absenden" drücken, zeigt
+      Ihre Email-App Ihre Buchung an. Wo nichts gebucht wurde, steht dort "kB" für keine Buchung.
+      Haben Sie etwas Anderes als f/s/t eingegeben, erscheint ebenfalls "kB".</p> <br><br>
 
-      <ion-item lines="none">
-        <ion-label>Rückruf wegen Auto?</ion-label>
-        <ion-toggle class="bggr" slot="start" color="light" formControlName="callCar" type="toggle" checked="false"></ion-toggle>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-label>Rückruf wegen Kollegen?</ion-label>
-        <ion-toggle class="bggr" slot="start" color="light" formControlName="callColl" type="toggle" checked="false"></ion-toggle>
-      </ion-item>
-    </ion-list>
-
-    <ion-button color="light" (click)="goNext()" expand="block" [disabled]="!buchenForm.valid">
+    <ion-button color="light" (click)="goNext()" expand="block">
       Weiter
     </ion-button>
   </form>
