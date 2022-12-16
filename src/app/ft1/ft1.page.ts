@@ -105,9 +105,9 @@ export class Ft1Page implements OnInit {
     } else if (fre === 's') {
       this.fret = 'FR: spät';
     } else if (fre === 't') {
-      this.fret = 'DO: 24h';
+      this.fret = 'FR: 24h';
     } else {
-      this.fret = 'DO: kB';
+      this.fret = 'FR: kB';
     }
     wo1.push(this.fret);
 
@@ -150,7 +150,7 @@ export class Ft1Page implements OnInit {
 
   goNext() {
     this.makeList();
-    this.mes1 = 'Basisinformationen: ' + this.basinf + '<br>' + 'Taxi für nächste Woche:<br> + ' + this.woche1;
+    this.mes1 = 'Basisinformationen: ' + this.basinf + '<br>' + 'Taxi für nächste Woche: <br>' + this.woche1;
     const navex: NavigationExtras = {
       state: {
         m1: this.mes1
@@ -161,7 +161,7 @@ export class Ft1Page implements OnInit {
 
   sendMail() {
     this.makeList();
-    this.mes1 = 'Basisinformationen: ' + this.basinf + '<br>' + 'Taxi für nächste Woche:<br>' + this.woche1;
+    this.mes1 = 'Basisinformationen: ' + this.basinf + '<br>' + 'Taxi für nächste Woche: <br>' + this.woche1;
     const email = {
       to: 'bestellen@taxiwerbung.at',
       subject: 'Taxi-Reservierung',

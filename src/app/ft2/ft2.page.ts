@@ -146,7 +146,7 @@ export class Ft2Page implements OnInit {
 
   sendMail() {
     this.makeList();
-    this.mes2 = this.mes1 + '<br>' + 'Taxi für übernächste Woche:<br>' + this.woche2;
+    this.mes2 = this.mes1 + '<br>' + 'Taxi für übernächste Woche: <br>' + this.woche2;
     console.log(this.mes2);
     const email = {
       to: 'bestellen@taxiwerbung.at',
