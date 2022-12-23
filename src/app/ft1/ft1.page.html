@@ -9,41 +9,73 @@
 
 <ion-content>
 
-  <form [formGroup]="nxtForm">
-    <ion-label position="stacked">Montag</ion-label>
-    <ion-input  formControlName="mo" type="text"
-    placeholder="f/s/t"></ion-input>
-
-    <ion-label position="stacked">Dienstag</ion-label>
-    <ion-input  formControlName="di" type="text"
-    placeholder="f/s/t"></ion-input>
-
-    <ion-label position="stacked">Mittwoch</ion-label>
-    <ion-input  formControlName="mi" type="text"
-    placeholder="f/s/t"></ion-input>
-
-    <ion-label position="stacked">Donnerstag</ion-label>
-    <ion-input  formControlName="do" type="text"
-    placeholder="f/s/t"></ion-input>
-
-    <ion-label position="stacked">Freitag</ion-label>
-    <ion-input  formControlName="fr" type="text"
-    placeholder="f/s/t"></ion-input>
-
-    <ion-label position="stacked">Samstag</ion-label>
-    <ion-input  formControlName="sa" type="text"
-    placeholder="f/s/t"></ion-input>
-
-    <ion-label position="stacked">Sonntag</ion-label>
-    <ion-input  formControlName="so" type="text"
-    placeholder="f/s/t"></ion-input>
-
-
+  <form [formGroup]="nxtForm" (ngSubmit)="sendMail()" #form="ngForm">
     <ion-grid>
-      <ion-row>      <ion-col><ion-button color="light" (click)="sendMail()">Absenden</ion-button></ion-col>
-        <ion-col><ion-button color="light" (click)="goNext()">Weiter buchen</ion-button></ion-col>
+      <ion-row>
+        <ion-col><ion-label position="stacked">Montag</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="mo" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.mo.valid
+        && nxtForm.controls.mo.dirty || form.submitted">
+        Montag bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-label position="stacked">Dienstag</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="di" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.di.valid
+        && nxtForm.controls.di.dirty || form.submitted">
+        Dienstag bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-label position="stacked">Mittwoch</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="mi" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.mi.valid
+        && nxtForm.controls.mi.dirty || form.submitted">
+        Mittwoch bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-label position="stacked">Donnerstag</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="do" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.do.valid
+        && nxtForm.controls.do.dirty || form.submitted">
+        Donnerstag bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-label position="stacked">Freitag</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="fr" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.fr.valid
+        && nxtForm.controls.fr.dirty || form.submitted">
+        Freitag bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
+        </ion-row>
+
+      <ion-row>
+        <ion-col><ion-label position="stacked">Samstag</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="sa" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.sa.valid
+        && nxtForm.controls.sa.dirty || form.submitted">
+        Samstag bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
+        </ion-row>
+
+      <ion-row>
+        <ion-col><ion-label position="stacked">Sonntag</ion-label></ion-col>
+        <ion-col><ion-input  formControlName="so" type="text" placeholder="f/s/t"></ion-input></ion-col>
+        <p class="error-message" *ngIf="!nxtForm.controls.so.valid
+        && nxtForm.controls.so.dirty || form.submitted">
+        Samonng bitte entweder f, s oder t eingeben, oder Feld leer lassen!
+      </p>
       </ion-row>
     </ion-grid>
+
+    <ion-button expand="block" color="light" (click)="sendMail()">Absenden</ion-button>
   </form>
 
 </ion-content>

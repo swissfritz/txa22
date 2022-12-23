@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 
 @Component({
@@ -14,37 +14,34 @@ export class BuchenPage implements OnInit {
   nomen: string;
   gla: string;
   sameCar: boolean;
-  aca: string;
-  callCar: boolean;
-  aco: string;
-  callColl: boolean;
   message: string;
 
   constructor(
-    public formBuilder: FormBuilder,
+    public fb: FormBuilder,
     private router: Router
-  )
-  {this.buchenForm = this.formBuilder.group({
-    namen: ['', Validators.compose([Validators.required])
-    ],
+  ){
+    this.buchenForm = new FormGroup({
+      names: new FormControl(),
+      sameCar: new FormControl()
+    });
+
+    this.buchenForm = this.fb.nonNullable.group({
+    names: ['', Validators.required],
     sameCar: false,
-    callCar: false,
-    callColl: false
     });
   }
 
   ngOnInit() {
   }
 
-
-  goNext() {
-    this.nomen = this.buchenForm.value.namen;
+  onSubmit() {
+    this.nomen = this.buchenForm.value.names;
     this.basinf.push(this.nomen);
 
     if (this.buchenForm.value.sameCar === true) {
       this.gla = 'Gleiches Fahrzeug';
     } else {
-      this.gla = '';
+      this.gla = 'Fahrzeug egal';
     }
     this.basinf.push(this.gla);
 

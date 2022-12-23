@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 
 @Component({
@@ -33,18 +33,29 @@ export class Ft2Page implements OnInit {
         }
         console.log('basinfo+Woche 1:', this.mes1);
       });
+
+      this.nxtForm = new FormGroup({
+        mo: new FormControl(),
+        di: new FormControl(),
+        mi: new FormControl(),
+        do: new FormControl(),
+        fr: new FormControl(),
+        sa: new FormControl(),
+        so: new FormControl()
+      });
+
+      this.nxtForm = formBuilder.group({
+        mo: ['', Validators.pattern('f|s|t')],
+        di: ['', Validators.pattern('f|s|t')],
+        mi: ['', Validators.pattern('f|s|t')],
+        do: ['', Validators.pattern('f|s|t')],
+        fr: ['', Validators.pattern('f|s|t')],
+        sa: ['', Validators.pattern('f|s|t')],
+        so: ['', Validators.pattern('f|s|t')]
+      });
     }
 
   ngOnInit() {
-    this.nxtForm = new FormGroup({
-      mo: new FormControl(),
-      di: new FormControl(),
-      mi: new FormControl(),
-      do: new FormControl(),
-      fr: new FormControl(),
-      sa: new FormControl(),
-      so: new FormControl()
-  });
   }
 
   makeList() {
@@ -156,5 +167,9 @@ export class Ft2Page implements OnInit {
     };
 
     this.emailComposer.open(email);
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/home');
   }
 }
