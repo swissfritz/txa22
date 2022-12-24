@@ -33,7 +33,7 @@ export class Ft1Page implements OnInit {
         if (this.router.getCurrentNavigation().extras.state) {
           this.basinf = this.router.getCurrentNavigation().extras.state.bi;
         }
-        console.log('Basisinfo:', this.basinf);
+
       });
 
       this.nxtForm = new FormGroup({
@@ -147,16 +147,16 @@ export class Ft1Page implements OnInit {
     wo1.push(this.sont);
     this.woche1 = wo1;
 
-    console.log(this.mont);
-    console.log(this.diet);
-    console.log(this.mitt);
-    console.log(this.dont);
-    console.log(this.fret);
-    console.log(this.samt);
-    console.log(this.sont);
-    console.log(wo1);
-    console.log('Basisinfo: ', this.basinf);
-    console.log('Woche 1:' , this.woche1);
+    (this.mont);
+    (this.diet);
+    (this.mitt);
+    (this.dont);
+    (this.fret);
+    (this.samt);
+    (this.sont);
+    (wo1);
+
+
   }
 
   goNext() {

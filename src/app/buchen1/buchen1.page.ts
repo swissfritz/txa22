@@ -27,7 +27,7 @@ export class Buchen1Page implements OnInit {
         if (this.router.getCurrentNavigation().extras.state) {
           this.basinf = this.router.getCurrentNavigation().extras.state.bi;
         }
-        console.log('Basisinfo:', this.basinf);
+
       });
     }
   ngOnInit() {
@@ -119,9 +119,9 @@ export class Buchen1Page implements OnInit {
     if (son === 3) {
       wo1.push(' SO: 24h ');
     }
-    console.log('Woche 1: ', wo1);
+
     this.woche1 = wo1;
-    console.log('Woche1: ', this.woche1);
+
   }}
 
   goNext() {

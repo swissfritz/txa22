@@ -45,7 +45,7 @@ export class BuchenPage implements OnInit {
     }
     this.basinf.push(this.gla);
 
-    console.log('basisinfo: ', this.basinf);
+
 
     const navex: NavigationExtras = {
       state: {

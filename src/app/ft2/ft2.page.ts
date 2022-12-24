@@ -31,7 +31,7 @@ export class Ft2Page implements OnInit {
         if (this.router.getCurrentNavigation().extras.state) {
           this.mes1 = this.router.getCurrentNavigation().extras.state.m1;
         }
-        console.log('basinfo+Woche 1:', this.mes1);
+
       });
 
       this.nxtForm = new FormGroup({
@@ -145,20 +145,20 @@ export class Ft2Page implements OnInit {
     wo2.push(this.sont);
     this.woche2 = wo2;
 
-    console.log(this.mont);
-    console.log(this.diet);
-    console.log(this.mitt);
-    console.log(this.dont);
-    console.log(this.fret);
-    console.log(this.samt);
-    console.log(this.sont);
-    console.log(wo2);
+    (this.mont);
+    (this.diet);
+    (this.mitt);
+    (this.dont);
+    (this.fret);
+    (this.samt);
+    (this.sont);
+    (wo2);
   }
 
   sendMail() {
     this.makeList();
     this.mes2 = this.mes1 + '<br>' + 'Taxi für übernächste Woche: <br>' + this.woche2;
-    console.log(this.mes2);
+    (this.mes2);
     const email = {
       to: 'bestellen@taxiwerbung.at',
       subject: 'Taxi-Reservierung',
