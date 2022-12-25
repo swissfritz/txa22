@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
-
 
 @Component({
   selector: 'app-buchen2',
@@ -11,123 +9,85 @@ import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 })
 export class Buchen2Page implements OnInit {
 
-  public nxtForm: FormGroup;
-  mot: string;
-  dit: string;
-  mitt: string;
+  mo: '';
+  di: '';
+  mi: '';
+  do: '';
+  fr: '';
+  sa: '';
+  so: '';
   basinf: any;
   mes1: string;
   message: string;
-  woche2: string[];
+  woche2 = [];
 
   constructor(
-    public formBuilder: FormBuilder,
-    private router: Router,
     private route: ActivatedRoute,
+    private router: Router,
     public emailComposer: EmailComposer) {
       this.route.queryParams.subscribe(params => {
         if (this.router.getCurrentNavigation().extras.state) {
           this.mes1 = this.router.getCurrentNavigation().extras.state.m1;
         }
-
+        console.log('Message 1: ', this.mes1);
       });
     }
-  ngOnInit() {
-    this.nxtForm = new FormGroup({
-      mo: new FormControl(),
-      di: new FormControl(),
-      mi: new FormControl(),
-      do: new FormControl(),
-      fr: new FormControl(),
-      sa: new FormControl(),
-      so: new FormControl()
-    });
-  }
+
+  ngOnInit() {}
 
   makeList() {
-    const wo2 = [];
-
-    const mon = this.nxtForm.value.mo;
-    if (mon === 1) {
-      wo2.push(' MO: Tag ');
-    }
-    if (mon === 2) {
-      wo2.push(' MO: Nacht ');
-    }
-    if (mon === 3) {
-      wo2.push(' MO: 24h ');
+    const mon = 'MO: ' + this.mo;
+    if  (this.mo === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(mon);
     }
 
-    const die = this.nxtForm.value.di;
-    if (die === 1) {
-      wo2.push(' DI: Tag ');
-    }
-    if (die === 2) {
-      wo2.push(' DI: Nacht ');
-    }
-    if (die === 3) {
-      wo2.push(' DI: 24h ');
-    }
-    const mie = this.nxtForm.value.mi;
-    if (mie === 1) {
-      wo2.push(' MI: Tag ');
-    }
-    if (mie === 2) {
-      wo2.push(' MI: Nacht ');
-    }
-    if (mie === 3) {
-      wo2.push(' MI: 24h ');
-
-    const don = this.nxtForm.value.do;
-    if (don === 1) {
-      wo2.push(' DO: Tag ');
-    }
-    if (don === 2) {
-      wo2.push(' DO: Nacht ');
-    }
-    if (don === 3) {
-      wo2.push(' DO: 24h ');
+    const die = 'DI: ' + this.di;
+    if  (this.di === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(die);
     }
 
-    const fre = this.nxtForm.value.fr;
-    if (fre === 1) {
-      wo2.push(' FR: Tag ');
-    }
-    if (fre === 2) {
-      wo2.push(' FR: Nacht ');
-    }
-    if (fre === 3) {
-      wo2.push(' FR: 24h ');
+    const mit = 'MI: ' + this.mi;
+    if  (this.mi === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(mit);
     }
 
-    const sam = this.nxtForm.value.s;
-    if (sam === 1) {
-      wo2.push(' SA: Tag ');
-    }
-    if (sam === 2) {
-      wo2.push(' SA: Nacht ');
-    }
-    if (sam === 3) {
-      wo2.push(' SA: 24h ');
+    const don = 'DO: ' + this.do;
+    if  (this.do === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(don);
     }
 
-    const son = this.nxtForm.value.so;
-    if (son === 1) {
-      wo2.push(' SO: Tag ');
-    }
-    if (son === 2) {
-      wo2.push(' SO: Nacht ');
-    }
-    if (son === 3) {
-      wo2.push(' SO: 24h ');
+    const fre = 'FR: ' + this.fr;
+    if  (this.fr === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(fre);
     }
 
-    this.woche2 = wo2;
-  }}
+    const sam = 'SA: ' + this.sa;
+    if  (this.sa === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(sam);
+    }
 
 
+    const son = 'SO: ' + this.so;
+    if  (this.so === undefined) {
+      console.log('');
+    } else {
+      this.woche2.push(son);
+    }
 
-
+    console.log('Woche 2: ', this.woche2);
+  }
   sendMail() {
     this.makeList();
     this.message = this.mes1 + '<br>' + 'für übernächste Woche:<br>' + this.woche2;

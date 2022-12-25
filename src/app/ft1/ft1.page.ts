@@ -146,17 +146,6 @@ export class Ft1Page implements OnInit {
     }
     wo1.push(this.sont);
     this.woche1 = wo1;
-
-    (this.mont);
-    (this.diet);
-    (this.mitt);
-    (this.dont);
-    (this.fret);
-    (this.samt);
-    (this.sont);
-    (wo1);
-
-
   }
 
   goNext() {
