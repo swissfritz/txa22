@@ -84,8 +84,6 @@ export class Buchen1Page implements OnInit {
     } else {
       this.woche1.push(son);
     }
-
-    console.log('Woche 1: ', this.woche1);
   }
 
   goNext() {

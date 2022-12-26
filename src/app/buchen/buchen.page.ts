@@ -52,6 +52,6 @@ export class BuchenPage implements OnInit {
         bi: this.basinf
       }
     };
-    this.router.navigate([`/ft1`], navex);
+    this.router.navigate([`/buchen1`], navex);
   }
 }

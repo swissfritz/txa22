@@ -85,8 +85,6 @@ export class Buchen2Page implements OnInit {
     } else {
       this.woche2.push(son);
     }
-
-    console.log('Woche 2: ', this.woche2);
   }
   sendMail() {
     this.makeList();
